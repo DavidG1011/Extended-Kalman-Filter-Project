@@ -1,9 +1,10 @@
-## Extended Kalman Filter Project
-Udacity Self-Driving Car Engineer Nanodegree Program. Term 2, project 1.
+## Extended Kalman Filter Project:
+Udacity Self-Driving Car Engineer Nanodegree Program. Term 2, Project 1.
 
 The rubric followed for this project can be viewed [Here](https://review.udacity.com/#!/rubrics/748/view).
 
 # Note: This project can not be run without access to the simulator discussed below. 
+
 --
 
 ## Important Dependencies:
