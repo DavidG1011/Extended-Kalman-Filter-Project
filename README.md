@@ -1,10 +1,8 @@
-# Extended Kalman Filter Project:
+## Extended Kalman Filter Project:
+
 Udacity Self-Driving Car Engineer Nanodegree Program. Term 2, Project 1.
 
-The rubric followed for this project can be viewed [Here](https://review.udacity.com/#!/rubrics/748/view).
-
-
-### Note: This project can not be run without access to the simulator discussed below. 
+The rubric followed for this project can be viewed [Here](https://review.udacity.com/#!/rubrics/748/view). 
 
 ---
 
@@ -35,6 +33,10 @@ mkdir build
 cd build
 cmake .. && make
 ./ExtendedKF
+
+### Note:
+
+This project code connects to a simulator to output its calculations, and therefore cannot show output without access to it. Example output from the simulator can be viewed below.
 
 ---
 
