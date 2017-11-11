@@ -1,13 +1,14 @@
-## Extended Kalman Filter Project:
+# Extended Kalman Filter Project:
 Udacity Self-Driving Car Engineer Nanodegree Program. Term 2, Project 1.
 
 The rubric followed for this project can be viewed [Here](https://review.udacity.com/#!/rubrics/748/view).
 
-# Note: This project can not be run without access to the simulator discussed below. 
 
---
+### Note: This project can not be run without access to the simulator discussed below. 
 
-## Important Dependencies:
+---
+
+### Important Dependencies
 
 * cmake >= 3.5
   * All OSes: [click here for installation instructions](https://cmake.org/install/)
@@ -20,7 +21,7 @@ The rubric followed for this project can be viewed [Here](https://review.udacity
   * Mac: same deal as make - [install Xcode command line tools](https://developer.apple.com/xcode/features/)
   * Windows: recommend using [MinGW](http://www.mingw.org/)
 
-## Basic Build Instructions:
+### Basic Build Instructions
 
 1. Clone this repo.
 2. Make a build directory: `mkdir build && cd build`
@@ -35,14 +36,14 @@ cd build
 cmake .. && make
 ./ExtendedKF
 
---
-
-In this project you will utilize a kalman filter to estimate the state of a moving object of interest with noisy lidar and radar measurements. Passing the project requires obtaining RMSE values that are lower that the tolerance outlined in the project rubric.
+---
 
 ## Purpose:
---
+
+
 This project is to demonstrate the implementation of a kalman filter on noisy radar and lidar measurements to estimate the state of a moving object. The predictions will be measured for accuracy by calculating RMSE (Root-Mean-Square Error). This is further discussed below.
---
+
+---
 
 TODO: EXPLAIN RADAR AND LIDAR STRENGTHS AND WEAKNESSES AND HOW THEY CAN BE COMBINED TO CREATE A CLEAN OUTCOME. TALK ABOUT IMPLEMENTATIONS OF KF AND EKF FOR THE SPECIFIC DATA SETS. 
 
