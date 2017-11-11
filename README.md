@@ -27,13 +27,6 @@ The rubric followed for this project can be viewed [Here](https://review.udacity
    * On windows, you may need to run: `cmake .. -G "Unix Makefiles" && make`
 4. Run it: `./ExtendedKF `
 
-Copy and paste:
-
-mkdir build
-cd build
-cmake .. && make
-./ExtendedKF
-
 ### Note:
 
 This project code connects to a simulator to output its calculations, and therefore cannot show output without access to it. Example output from the simulator can be viewed below.
