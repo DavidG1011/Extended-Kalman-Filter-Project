@@ -10,7 +10,7 @@ The rubric followed for this project can be viewed [Here](https://review.udacity
 
 ### Credit: 
 
-Media used in this writeup are modifications from lessons in the Udacity Self-Driving Car Engineer Nanodegree Program.
+Media used in this writeup are from lessons in the Udacity Self-Driving Car Engineer Nanodegree Program.
 [Link To The Program](https://www.udacity.com/course/self-driving-car-engineer-nanodegree--nd013).
 
 
@@ -87,6 +87,8 @@ Size: Lidar is bulkier and harder to integrate. Radar is smaller and can be moun
 # Program Flow:
 
 This program follows the flow of this chart:
+
+
 
 
 TODO: TALK ABOUT THE STRUCTURE OF THE EKF AND KF ALGORITHMS, (INCLUDE DIAGRAM) AND THE PIECES OF THE EQUATIONS. 
