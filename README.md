@@ -1,3 +1,8 @@
+[//]: # (Image References)
+
+[image1]: .imgs/sensorflow.PNG "Flow"
+
+
 # Extended Kalman Filter Project:
 
 Udacity Self-Driving Car Engineer Nanodegree Program. Term 2, Project 1.
@@ -87,6 +92,9 @@ Size: Lidar is bulkier and harder to integrate. Radar is smaller and can be moun
 # Program Flow:
 
 This program follows the flow of this chart:
+
+
+![alt text][image1]
 
 
 
