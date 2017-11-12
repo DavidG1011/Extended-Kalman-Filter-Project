@@ -93,6 +93,7 @@ Size: Lidar is bulkier and harder to integrate. Radar is smaller and can be moun
 # Program Flow:
 
 This program follows the flow of this chart:
+
 ![alt text][image1]
 
 
@@ -113,7 +114,6 @@ Compute new F,Q:
 
 Predict x, P:
 - Run a prediction from previously defined matrices. 
-- Prediction is calculated as follows:
 ![alt text][image2]
 
       
