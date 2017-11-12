@@ -1,6 +1,7 @@
 [//]: # (Image References)
 
 [image1]: ./imgs/sensorflow.PNG "Flow"
+[image2]: ./imgs/onlypredict.PNG "Predict"
 
 
 # Extended Kalman Filter Project:
@@ -95,6 +96,28 @@ This program follows the flow of this chart:
 ![alt text][image1]
 
 
+Initialize Matrices: 
+- R: measurement noise. 
+- H: measurement function.
+
+First measurement:
+- Yes: Initialize state x. Convert from polar to cartesian if a radar measurement.
+       Initialize uncertainty covariance P. 
+       Initialize state transition matrix F. 
+       
+- No: Compute elapsed time delta t. (Current - Previous) / 1000000. 
+
+Compute new F,Q:
+- F: Computed with new delta t. 
+- Q: Process covariance matrix. Computed with delta t and x and y noise.
+
+Predict x, P:
+- Run a prediction from previously defined matrices. 
+- Prediction is calculated as follows:
+![alt text][image2]
+
+      
+       
 
 
 TODO: TALK ABOUT THE STRUCTURE OF THE EKF AND KF ALGORITHMS, (INCLUDE DIAGRAM) AND THE PIECES OF THE EQUATIONS. MAYBE TALK ABOUT FULL FLOW OF CHART ABOVE
