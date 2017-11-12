@@ -1,6 +1,6 @@
 [//]: # (Image References)
 
-[image1]: .imgs/sensorflow.PNG "Flow"
+[image1]: ./imgs/sensorflow.PNG "Flow"
 
 
 # Extended Kalman Filter Project:
@@ -92,14 +92,12 @@ Size: Lidar is bulkier and harder to integrate. Radar is smaller and can be moun
 # Program Flow:
 
 This program follows the flow of this chart:
-
-
 ![alt text][image1]
 
 
 
 
-TODO: TALK ABOUT THE STRUCTURE OF THE EKF AND KF ALGORITHMS, (INCLUDE DIAGRAM) AND THE PIECES OF THE EQUATIONS. 
+TODO: TALK ABOUT THE STRUCTURE OF THE EKF AND KF ALGORITHMS, (INCLUDE DIAGRAM) AND THE PIECES OF THE EQUATIONS. MAYBE TALK ABOUT FULL FLOW OF CHART ABOVE
 
 TODO: TALK ABOUT RMSE AND HOW IT IS CALCULATED IN THE PROGRAM.
 
