@@ -206,43 +206,23 @@ The measurement function can be found in `kalman_filter.cpp` and the CalculateJa
  
  The simulator has two datasets to run. The first is a figure 8 line, the second is a reverse figure 8 line:
  
- Dataset 1:
+ Dataset 1, both sensors:
  
  ![alt text][image8]
  
  As can be seen above, my estimated line is fairly accurate. My final RMSE values here are the ones discussed above in the RMSE section.
  
- Dataset 2:
+ 
+ Dataset 2, both sensors:
  
  ![alt text][image9]
  
  
+ ---
  
+ # Thoughts And Conclusion:
  
- 
- 
- 
-   
- 
-   
-     
-     
-  
-  
-  
-  
-  
-  
-  
-  
-     
-
-
-
-      
-  
-
-
-
-
-
+ I think this project was fun to tinker with. Simulator based projects are the best because you have a real time representation of the
+ code you wrote. It gives you a lot of insight into what needs to be improved, it also tells what works and doesn't work.  I am happy
+ with the RMSE values based on my current knowledge of Kalman Filters. This exercise will definitely be helpful for Uscented Kalman
+ Filters.
