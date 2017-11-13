@@ -5,6 +5,10 @@
 [image3]: ./imgs/hj.PNG "Jacobian"
 [image4]: ./imgs/measurement.PNG "Measurement Update"
 [image5]: ./imgs/hx.PNG "hx"
+[image6]: ./imgs/rmse.PNG "RMSE"
+[image7]: ./imgs/simicons.PNG "Simulator Icons"
+[image8]: ./imgs/simoverview.PNG "Simulator Overview"
+[image9]: ./imgs/simdata2.PNG "Simulator Dataset 2"
 
 
 # Extended Kalman Filter Project:
@@ -121,6 +125,8 @@ This program follows the flow of this chart:
      ![alt text][image2]
      
   (u is not used for prediction step in this program as u = 0)
+  
+The above initialization steps can be viewed in `FusionEKF.cpp`. Prediction function in `kalman_filter.cpp`.
 
 ### State Update with Kalman Filter equation or Extended Kalman Filter equation:
 - Radar: Linearize measurement function by calculating jacobian matrix Hj:
@@ -143,10 +149,77 @@ This program follows the flow of this chart:
    ^T = Tranpose.
    ^-1 = Inverse.
    
+The measurement function can be found in `kalman_filter.cpp` and the CalculateJacobian() in `tools.cpp`.
+   
    
  ---
  
  # RMSE (Root-Mean-Square Error):
+ 
+ To calculate the accuracy of estimated postitions from the Kalman Filter, we use RMSE. This is calculated from the following equation:
+ 
+ ![alt text][image6]
+ 
+ This equation takes the difference between the estimates and the ground truth, then squares them so larger differences are weighted
+ more. These squared differences are then summed, averaged, and taken the root of to get the final value.
+ 
+ I took the final RMSE of 3 distinct simulations estimated points. One with only radar measurements, one with only lidar measurements,
+ and then both measurements combined. These are the final outcomes for each distinct simulation after one full run with data set 1: 
+ 
+ (Smaller RMSE = More accurate)
+ 
+ | Lidar     | 
+ |:---------:|
+ | X: 0.1473 |
+ | Y: 0.1153 | 
+ |VX: 0.6383 |
+ |XY: 0.5346 |
+ 
+ | Radar     |
+ |:---------:|
+ | X: 0.2357 |
+ | Y: 0.3110 | 
+ |VX: 0.5679 |
+ |XY: 0.7818 |
+ 
+ |Radar + Lidar|
+ |:-----------:|
+ | X: 0.0996   |
+ | Y: 0.0837   | 
+ |VX: 0.4517   |
+ |XY: 0.4419   |
+ 
+ As can be seen above, lidar is the most accurate standalone measurement. As to be expected: both sensors combined has a much better
+ accuracy than either on its own. My passing threshold was <= [.11, .11, 0.52, 0.52] for this project, which my sensor fusion passes. 
+ 
+ 
+ ---
+ 
+ # Simulator Details And Outcome:
+ 
+ The simulator is a flat overhead view of a car that displays simulated radar and lidar measurements:
+ 
+ ![alt text][image7]
+ 
+ The red circles represent lidar measurements, blue circles are radar, and the green triangles are the estimated postitions from the
+ Kalman Filter. 
+ 
+ The simulator has two datasets to run. The first is a figure 8 line, the second is a reverse figure 8 line:
+ 
+ Dataset 1:
+ 
+ ![alt text][image8]
+ 
+ As can be seen above, my estimated line is fairly accurate. My final RMSE values here are the ones discussed above in the RMSE section.
+ 
+ Dataset 2:
+ 
+ ![alt text][image9]
+ 
+ 
+ 
+ 
+ 
  
  
    
@@ -170,8 +243,6 @@ This program follows the flow of this chart:
   
 
 
-TODO: DISPLAY SIMULATOR IMAGES AND TALK ABOUT THE RMSE VALUES FOR EACH DATA SET. ALSO TALK ABOUT SIMULATOR DETAILS. WHAT THE SYMBOLS REPRESENT, ETC. 
 
-TODO: MAKE CHARTS TO SHOW THE DIFFERENCE IN RMSE WHEN USING ONLY RADAR AND ONLY LIDAR, THEN BOTH MEASUREMENTS. 
 
-TODO: READ LESSONS AND SEE IF MISSING ANYTHING ELSE TO TALK ABOUT.
+
