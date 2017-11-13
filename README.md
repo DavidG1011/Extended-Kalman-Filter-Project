@@ -222,7 +222,7 @@ The measurement function can be found in `kalman_filter.cpp` and the CalculateJa
  
  # Thoughts And Conclusion:
  
- I think this project was fun to tinker with. Simulator based projects are the best because you have a real time representation of the
- code you wrote. It gives you a lot of insight into what needs to be improved, it also tells what works and doesn't work.  I am happy
- with the RMSE values based on my current knowledge of Kalman Filters. This exercise will definitely be helpful for Uscented Kalman
- Filters.
+ I think this project was fun to tinker with. Simulator based projects are the best-- in my opinion, because I have a real time
+ representation of the code I wrote. It gives me a lot of insight into what needs to be improved, as well as also telling me what works
+ and doesn't work.  I am happy with the RMSE values based on my current knowledge of Kalman Filters. This exercise will definitely be
+ helpful for Unscented Kalman Filters.
