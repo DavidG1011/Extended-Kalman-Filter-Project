@@ -2,6 +2,9 @@
 
 [image1]: ./imgs/sensorflow.PNG "Flow"
 [image2]: ./imgs/onlypredict.PNG "Predict"
+[image3]: ./imgs/hj.PNG "Jacobian"
+[image4]: ./imgs/measurement.PNG "Measurement Update"
+[image5]: ./imgs/hx.PNG "hx"
 
 
 # Extended Kalman Filter Project:
@@ -16,7 +19,7 @@ The rubric followed for this project can be viewed [Here](https://review.udacity
 
 ### Credit: 
 
-Media used in this writeup are from lessons in the Udacity Self-Driving Car Engineer Nanodegree Program.
+Pictures and equations referenced in this writeup are from lessons in the Udacity Self-Driving Car Engineer Nanodegree Program.
 [Link To The Program](https://www.udacity.com/course/self-driving-car-engineer-nanodegree--nd013).
 
 
@@ -79,7 +82,7 @@ Radar (Radio Dection and Ranging): Radar similarily uses pulses that reflect or 
 
 Resolution: Lidar has an OK resolution, while radar has poor resolution. Lidar has a more focussed laser and uses a higher level of vertical scan layers to create a dense point cloud. Radar has especially poor vertical resolution.
 
-Noise: Neither sensor is particularly good with noise. Radar can be highly reflective with certain materials or surfaces, which throws off measurements. Lidar has a relatively higher resolution-- as stated before, which can pick up too much data and introduce noise. 
+Noise: Neither sensor is particularly good with noise. Radar can be highly reflective with certain materials or surfaces, which throws off measurements. Lidar has a relatively higher resolution-- as stated before, which can pick up extra noise. 
 
 Velocity: Lidar can not currently measure direct velocity, and must be calculated separately. Radar can currently measure direct velocity by the doppler effect.
 
@@ -97,32 +100,75 @@ This program follows the flow of this chart:
 ![alt text][image1]
 
 
-Initialize Matrices: 
+### Initialize Matrices: 
 - R: measurement noise. 
 - H: measurement function.
 
-First measurement:
+### First measurement:
 - Yes: Initialize state x. Convert from polar to cartesian if a radar measurement.
        Initialize uncertainty covariance P. 
        Initialize state transition matrix F. 
        
 - No: Compute elapsed time delta t. (Current - Previous) / 1000000. 
 
-Compute new F,Q:
+### Compute new F,Q:
 - F: Computed with new delta t. 
 - Q: Process covariance matrix. Computed with delta t and x and y noise.
 
-Predict x, P:
-- Run a prediction from previously defined matrices. 
-![alt text][image2]
+### Predict x, P:
+- Run a prediction with previously defined matrices. 
+
+     ![alt text][image2]
+     
+  (u is not used for prediction step in this program as u = 0)
+
+### State Update with Kalman Filter equation or Extended Kalman Filter equation:
+- Radar: Linearize measurement function by calculating jacobian matrix Hj:
+
+     ![alt text][image3]
+     
+  Run measurement update with Extended Kalman Filter equations:
+  
+     ![alt text][image4]
+     
+  Image referenced is of Kalman Filter equations. Extended Kalman Filter equation is modified to be y = z - h(x), and uses Hj in place
+  of any other H. h(x) is defined as:
+  
+     ![alt text][image5]
+     
+ - Lidar: Update function run from standard Kalman Filter equations:
+ 
+     ![alt text][image4]
+      
+   ^T = Tranpose.
+   ^-1 = Inverse.
+   
+   
+ ---
+ 
+ # RMSE (Root-Mean-Square Error):
+ 
+ 
+   
+ 
+   
+     
+     
+  
+  
+  
+  
+  
+  
+  
+  
+     
+
+
 
       
-       
+  
 
-
-TODO: TALK ABOUT THE STRUCTURE OF THE EKF AND KF ALGORITHMS, (INCLUDE DIAGRAM) AND THE PIECES OF THE EQUATIONS. MAYBE TALK ABOUT FULL FLOW OF CHART ABOVE
-
-TODO: TALK ABOUT RMSE AND HOW IT IS CALCULATED IN THE PROGRAM.
 
 TODO: DISPLAY SIMULATOR IMAGES AND TALK ABOUT THE RMSE VALUES FOR EACH DATA SET. ALSO TALK ABOUT SIMULATOR DETAILS. WHAT THE SYMBOLS REPRESENT, ETC. 
 
